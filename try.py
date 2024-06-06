@@ -11,9 +11,9 @@ import cv2
 import numpy as np
 import json
 
-WORKSPACE_PATH = 'Identification_Bills-Prueba/Tensorflow/workspace'
-SCRIPTS_PATH = 'Identification_Bills-Prueba/Tensorflow/scripts'
-APIMODEL_PATH = 'Identification_Bills-Prueba/Tensorflow/models'
+WORKSPACE_PATH = 'Tensorflow/workspace'
+SCRIPTS_PATH = 'Tensorflow/scripts'
+APIMODEL_PATH = 'Tensorflow/models'
 ANNOTATION_PATH = WORKSPACE_PATH+'/annotations'
 IMAGE_PATH = WORKSPACE_PATH+'/images'
 MODEL_PATH = WORKSPACE_PATH+'/models'
@@ -82,7 +82,7 @@ while True:
     #num_detections = int(detections['num_detections'])
     #num_detections = int(detections.numpy())
     num_detections = int(detections.pop('num_detections'))
-    detections = {key: value[0, :num_detections].numpy()
+    detections = {key: value[0:, num_detections].numpy()
                   for key, value in detections.items()}
     detections['num_detections'] = num_detections
 
