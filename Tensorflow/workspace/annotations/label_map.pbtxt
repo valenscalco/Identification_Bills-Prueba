@@ -1,0 +1,15 @@
+item {
+    name: "cien",
+    id: 1,
+    display_name: "cien"
+}
+item {
+    name: "mil",
+    id: 2,
+    display_name: "mil"
+}
+item {
+    name: "quinientos",
+    id: 3,
+    display_name: "quinientos"
+}
