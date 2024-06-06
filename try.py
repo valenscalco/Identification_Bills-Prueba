@@ -82,7 +82,7 @@ while True:
     #num_detections = int(detections['num_detections'])
     #num_detections = int(detections.numpy())
     num_detections = int(detections.pop('num_detections'))
-    detections = {key: value[0:, num_detections].numpy()
+    detections = {key: value[0, :num_detections].numpy()
                   for key, value in detections.items()}
     detections['num_detections'] = num_detections
 
